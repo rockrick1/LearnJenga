@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StackView : MonoBehaviour
@@ -19,6 +21,7 @@ public class StackView : MonoBehaviour
 
     public Transform FocalPoint => focalPoint;
 
+    readonly List<BlockView> blocks = new();
     int currentPoint;
     float currentHeight;
 
@@ -63,6 +66,7 @@ public class StackView : MonoBehaviour
         Vector3 position = instance.transform.position;
         position.y += currentHeight;
         instance.transform.position = position;
+        blocks.Add(instance);
 
         currentPoint = (currentPoint + 1) % 6;
     }
@@ -74,5 +78,16 @@ public class StackView : MonoBehaviour
         Vector3 pos = focalPoint.transform.position;
         pos.y += blockHeight / 2;
         focalPoint.transform.position = pos;
+    }
+
+    public void RemoveGlasses ()
+    {
+        foreach (BlockView block in blocks)
+        {
+            if (block.Mastery == Mastery.Glass)
+            {
+                block.Destroyed();
+            }
+        }
     }
 }

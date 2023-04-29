@@ -8,13 +8,19 @@ public class WorldObjectsController : IDisposable
     
     readonly WorldObjectsView view;
     readonly StackLoaderModel stackLoaderModel;
+    readonly StackTesterController stackTesterController;
 
     readonly List<StackController> stackControllers = new();
-    
-    public WorldObjectsController (WorldObjectsView view, StackLoaderModel stackLoaderModel)
+
+    public WorldObjectsController (
+        WorldObjectsView view,
+        StackLoaderModel stackLoaderModel,
+        StackTesterController stackTesterController
+    )
     {
         this.view = view;
         this.stackLoaderModel = stackLoaderModel;
+        this.stackTesterController = stackTesterController;
     }
 
     public void Initialize ()
@@ -25,11 +31,19 @@ public class WorldObjectsController : IDisposable
 
     void AddListeners ()
     {
+        stackTesterController.OnTestStackClicked += HandleTestStack;
     }
 
     void RemoveListeners ()
     {
+        stackTesterController.OnTestStackClicked -= HandleTestStack;
     }
+
+    void HandleTestStack (string stack)
+    {
+        RemoveGlassesFromStack(stack);
+    }
+
 
     void CreateStacks ()
     {
@@ -45,6 +59,17 @@ public class WorldObjectsController : IDisposable
             stackController.SetGradeText(key);
 
             OnStackCreated?.Invoke(key, stackController.FocalPoint);
+        }
+    }
+
+    void RemoveGlassesFromStack (string stack)
+    {
+        foreach (StackController stackController in stackControllers)
+        {
+            if (stackController.Key == stack)
+            {
+                stackController.RemoveGlasses();
+            }
         }
     }
 

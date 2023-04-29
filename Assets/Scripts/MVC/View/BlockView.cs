@@ -8,8 +8,11 @@ public class BlockView : MonoBehaviour
     [SerializeField] Material wood;
     [SerializeField] Material stone;
     
+    public Mastery Mastery { get; private set; }
+    
     public void SetMaterial (Mastery blockMastery)
     {
+        Mastery = blockMastery;
         switch (blockMastery)
         {
             case Mastery.Glass:
@@ -24,5 +27,10 @@ public class BlockView : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(blockMastery), blockMastery, null);
         }
+    }
+
+    public void Destroyed ()
+    {
+        Destroy(gameObject);
     }
 }

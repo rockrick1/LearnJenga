@@ -6,6 +6,8 @@ public class StackSelectorController : IDisposable
 {
     public event Action<string> OnStackSelected;
     
+    public string CurrentStack { get; private set; }
+    
     readonly StackSelectorView view;
     readonly StackLoaderModel stackLoaderModel;
 
@@ -34,12 +36,11 @@ public class StackSelectorController : IDisposable
         view.OnStackSelected -= HandleStackSelected;
     }
 
-    void HandleStackCreated (string key, Transform focalPoint)
+    void HandleStackSelected (string stack)
     {
-        
+        CurrentStack = stack;
+        OnStackSelected?.Invoke(stack);
     }
-
-    void HandleStackSelected (string stack) => OnStackSelected?.Invoke(stack);
 
     void CreateButtons () => view.CreateButtons(stackLoaderModel.Stacks.Keys.ToList());
 

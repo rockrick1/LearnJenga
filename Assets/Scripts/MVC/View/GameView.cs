@@ -10,4 +10,5 @@ public class GameView : MonoBehaviour
     public CameraOrbitView CameraOrbitView => cameraOrbitView;
     public WorldObjectsView WorldObjectsView => worldObjectsView;
     public StackSelectorView StackSelectorView => gameUIView.StackSelectorView;
+    public StackTesterView StackTesterView => gameUIView.StackTesterView;
 }
