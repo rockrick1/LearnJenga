@@ -32,18 +32,10 @@
 
     void AddListeners ()
     {
-        // model.OnAudioStartTimeReached += HandleAudioStartTimeReached;
-        // model.OnNoteHit += HandleNoteHit;
-        // model.OnLongNoteHit += HandleNoteHit;
-        // model.OnLongNoteReleased += HandleNoteHit;
     }
 
     void RemoveListeners ()
     {
-        // model.OnAudioStartTimeReached -= HandleAudioStartTimeReached;
-        // model.OnNoteHit -= HandleNoteHit;
-        // model.OnLongNoteHit -= HandleNoteHit;
-        // model.OnLongNoteReleased -= HandleNoteHit;
     }
     
     public void Dispose ()
