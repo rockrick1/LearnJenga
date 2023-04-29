@@ -42,7 +42,11 @@ public class StackSelectorController : IDisposable
         OnStackSelected?.Invoke(stack);
     }
 
-    void CreateButtons () => view.CreateButtons(stackLoaderModel.Stacks.Keys.ToList());
+    void CreateButtons ()
+    {
+        CurrentStack = stackLoaderModel.Stacks.Keys.ToList()[0];
+        view.CreateButtons(stackLoaderModel.Stacks.Keys.ToList());
+    }
 
     public void Dispose ()
     {
