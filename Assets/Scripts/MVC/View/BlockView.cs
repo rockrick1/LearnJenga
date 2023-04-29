@@ -77,6 +77,7 @@ public class BlockView : MonoBehaviour
 
     void Update ()
     {
+        SetMaterial(data.Mastery);
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -91,8 +92,6 @@ public class BlockView : MonoBehaviour
 
                 }
             }
-            else
-                SetMaterial(data.Mastery);
         }
     }
 }
