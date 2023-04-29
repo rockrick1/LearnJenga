@@ -16,7 +16,8 @@
         );
         CameraOrbitController cameraOrbitController = new(
             view.CameraOrbitView,
-            stackSelectorController
+            stackSelectorController,
+            worldObjectsController
         );
 
         return new GameController(

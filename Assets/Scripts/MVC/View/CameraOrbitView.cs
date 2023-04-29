@@ -1,13 +1,18 @@
-﻿using System;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class CameraOrbitView : MonoBehaviour
 {
+    const float STACK_CHANGE_DURATION = .5f;
+    
     [SerializeField] float rotationSpeed;
 
     Vector3 localRotation;
 
-    public void SetFocalPoint (Transform point) => transform.position = point.position;
+    public void SetFocalPoint (Transform point)
+    {
+        transform.DOMove(point.position, STACK_CHANGE_DURATION).SetEase(Ease.OutCubic);
+    }
 
     void Start ()
     {

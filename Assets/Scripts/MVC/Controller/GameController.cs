@@ -26,8 +26,8 @@
     {
         AddListeners();
         GameUIController.Initialize();
-        WorldObjectsController.Initialize();
         CameraOrbitController.Initialize();
+        WorldObjectsController.Initialize();
     }
 
     void AddListeners ()

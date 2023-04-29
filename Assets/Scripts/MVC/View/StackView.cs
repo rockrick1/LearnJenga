@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class StackView : MonoBehaviour
@@ -12,6 +13,11 @@ public class StackView : MonoBehaviour
     [SerializeField] Transform buildingPoint4;
     [SerializeField] Transform buildingPoint5;
     [SerializeField] Transform buildingPoint6;
+
+    [SerializeField] Transform focalPoint;
+    [SerializeField] TextMeshPro gradeText;
+
+    public Transform FocalPoint => focalPoint;
 
     int currentPoint;
     float currentHeight;
@@ -32,6 +38,7 @@ public class StackView : MonoBehaviour
             case 0:
                 parent = buildingPoint1;
                 currentHeight += blockHeight;
+                UpdateFocalPoint();
                 break;
             case 1:
                 parent = buildingPoint2;
@@ -42,6 +49,7 @@ public class StackView : MonoBehaviour
             case 3:
                 parent = buildingPoint4;
                 currentHeight += blockHeight;
+                UpdateFocalPoint();
                 break;
             case 4:
                 parent = buildingPoint5;
@@ -51,10 +59,20 @@ public class StackView : MonoBehaviour
                 break;
         }
         BlockView instance = Instantiate(blockPrefab, parent);
+        instance.SetMaterial(block.Mastery);
         Vector3 position = instance.transform.position;
         position.y += currentHeight;
         instance.transform.position = position;
 
         currentPoint = (currentPoint + 1) % 6;
+    }
+
+    public void SetGradeText (string text) => gradeText.text = text;
+
+    void UpdateFocalPoint ()
+    {
+        Vector3 pos = focalPoint.transform.position;
+        pos.y += blockHeight / 2;
+        focalPoint.transform.position = pos;
     }
 }

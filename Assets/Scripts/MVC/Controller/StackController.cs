@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using UnityEngine;
 
 public class StackController : IDisposable
 {
+    public Transform FocalPoint => view.FocalPoint;
+    
     readonly StackView view;
     
     public StackController (StackView view)
@@ -15,6 +17,10 @@ public class StackController : IDisposable
         AddListeners();
     }
 
+    public void AddBlock (BlockData block) => view.AddBlock(block);
+
+    public void SetGradeText (string key) => view.SetGradeText(key);
+
     void AddListeners ()
     {
     }
@@ -26,10 +32,5 @@ public class StackController : IDisposable
     public void Dispose ()
     {
         RemoveListeners();
-    }
-
-    public void AddBlock (BlockData block)
-    {
-        view.AddBlock(block);
     }
 }

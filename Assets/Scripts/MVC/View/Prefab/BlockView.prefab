@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a8dd4c0ac3035ec4f9e54116ff64c5c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,3 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38bbd3af52e42a5befb9e2f2e59014b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mesh: {fileID: 2514137000280782685}
+  glass: {fileID: 2100000, guid: a8dd4c0ac3035ec4f9e54116ff64c5c3, type: 2}
+  wood: {fileID: 2100000, guid: 3ac4ef1faf8887d4e95485e19d85aabb, type: 2}
+  stone: {fileID: 2100000, guid: db695c2c901026f4eb4f788ad93c6706, type: 2}

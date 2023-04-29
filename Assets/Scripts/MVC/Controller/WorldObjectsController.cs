@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class WorldObjectsController : IDisposable
 {
+    public event Action<string, Transform> OnStackCreated;
+    
     readonly WorldObjectsView view;
     readonly StackLoaderModel stackLoaderModel;
 
@@ -38,6 +41,10 @@ public class WorldObjectsController : IDisposable
             {
                 stackController.AddBlock(value);
             }
+
+            stackController.SetGradeText(key);
+
+            OnStackCreated?.Invoke(key, stackController.FocalPoint);
         }
     }
 
