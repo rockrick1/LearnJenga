@@ -41,10 +41,70 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraOrbitController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\CameraOrbitView.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\GameModel.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\GameController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\GameView.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\CameraOrbitController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\Factory\GameControllerFactory.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\Factory\GameModelFactory.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\WorldObjectsView.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\GameUIView.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\GameUIController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\StackLoaderModel.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\BlockData.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\Mastery.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\StackView.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\StackController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\BlockView.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\WorldObjectsController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\StackSelectorController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\StackSelectorView.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\StackSelectButtonView.cs" />
      <Folder Include="Assets" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\Scripts\MVC" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Assets\Scripts\MVC\View" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\Scripts" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Art" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <Folder Include="Assets\Scripts\MVC\Controller\Factory" />
+     <Folder Include="Assets\Scripts\MVC\Model" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
+     <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Scenes" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <Folder Include="Assets\Scripts\MVC\Model\Factory" />
+     <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <Folder Include="Assets\Scripts\Managers" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <Folder Include="Assets\Scripts\MVC\Controller" />
+     <Folder Include="Assets\Scripts\MVC\View\Prefab" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Programs\2021.3.21f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -296,6 +356,9 @@
      </Reference>
      <Reference Include="ReportGeneratorMerged">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.0\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>D:\Programs\2021.3.21f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -731,6 +794,9 @@
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json.UnityConverters">
+     <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\Newtonsoft.Json.UnityConverters.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
