@@ -10,15 +10,20 @@
             view.StackTesterView,
             stackSelectorController
         );
-        GameUIController gameUIController = new(
-            view.GameUIView,
-            stackSelectorController,
-            stackTesterController
-        );
         WorldObjectsController worldObjectsController = new(
             view.WorldObjectsView,
             model.StackLoaderModel,
             stackTesterController
+        );
+        BlockDetailsController blockDetailsController = new(
+            view.BlockDetailsView,
+            worldObjectsController
+        );
+        GameUIController gameUIController = new(
+            view.GameUIView,
+            stackSelectorController,
+            stackTesterController,
+            blockDetailsController
         );
         CameraOrbitController cameraOrbitController = new(
             view.CameraOrbitView,

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class StackView : MonoBehaviour
 {
+    public event Action<BlockData> OnBlockClick;
+
+    
     [SerializeField] BlockView blockPrefab;
 
     [SerializeField] Transform buildingPoint1;
@@ -25,7 +27,7 @@ public class StackView : MonoBehaviour
     int currentPoint;
     float currentHeight;
 
-    float blockHeight => blockPrefab.transform.localScale.y;
+    float blockHeight => blockPrefab.Scale;
 
     void Start ()
     {
@@ -62,13 +64,19 @@ public class StackView : MonoBehaviour
                 break;
         }
         BlockView instance = Instantiate(blockPrefab, parent);
-        instance.SetMaterial(block.Mastery);
+        instance.Setup(block);
         Vector3 position = instance.transform.position;
         position.y += currentHeight;
         instance.transform.position = position;
+        instance.OnClick += HandleBlockClick;
         blocks.Add(instance);
 
         currentPoint = (currentPoint + 1) % 6;
+    }
+
+    void HandleBlockClick (BlockData data)
+    {
+        OnBlockClick?.Invoke(data);
     }
 
     public void SetGradeText (string text) => gradeText.text = text;
@@ -84,9 +92,10 @@ public class StackView : MonoBehaviour
     {
         foreach (BlockView block in blocks)
         {
+            block.SetPhysicsActive(true);
             if (block.Mastery == Mastery.Glass)
             {
-                block.Destroyed();
+                block.Destroy();
             }
         }
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class WorldObjectsController : IDisposable
 {
     public event Action<string, Transform> OnStackCreated;
+    public event Action<BlockData> OnBlockClick;
+
     
     readonly WorldObjectsView view;
     readonly StackLoaderModel stackLoaderModel;
@@ -44,13 +46,19 @@ public class WorldObjectsController : IDisposable
         RemoveGlassesFromStack(stack);
     }
 
-
+    void HandleBlockClick (BlockData data)
+    {
+        OnBlockClick?.Invoke(data);
+    }
+    
     void CreateStacks ()
     {
         foreach (string key in stackLoaderModel.Stacks.Keys)
         {
             StackController stackController = new StackController(view.CreateStack(key));
+            stackController.Initialize();
             stackControllers.Add(stackController);
+            stackController.OnBlockClick += HandleBlockClick;
             foreach (BlockData value in stackLoaderModel.Stacks[key])
             {
                 stackController.AddBlock(value);
@@ -77,6 +85,9 @@ public class WorldObjectsController : IDisposable
     {
         RemoveListeners();
         foreach (StackController stackController in stackControllers)
+        {
             stackController.Dispose();
+            stackController.OnBlockClick -= HandleBlockClick;
+        }
     }
 }

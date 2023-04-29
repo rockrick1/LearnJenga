@@ -11,4 +11,5 @@ public class GameView : MonoBehaviour
     public WorldObjectsView WorldObjectsView => worldObjectsView;
     public StackSelectorView StackSelectorView => gameUIView.StackSelectorView;
     public StackTesterView StackTesterView => gameUIView.StackTesterView;
+    public BlockDetailsView BlockDetailsView => gameUIView.BlockDetailsView;
 }

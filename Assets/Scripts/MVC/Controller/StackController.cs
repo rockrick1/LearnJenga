@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class StackController : IDisposable
 {
+    public event Action<BlockData> OnBlockClick;
+
     public Transform FocalPoint => view.FocalPoint;
     
     readonly StackView view;
@@ -40,10 +42,17 @@ public class StackController : IDisposable
 
     void AddListeners ()
     {
+        view.OnBlockClick += HandleBlockClick;
     }
 
     void RemoveListeners ()
     {
+        view.OnBlockClick -= HandleBlockClick;
+    }
+
+    void HandleBlockClick (BlockData data)
+    {
+        OnBlockClick?.Invoke(data);
     }
 
     public void Dispose ()

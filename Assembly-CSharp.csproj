@@ -72,6 +72,8 @@
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Scripts\MVC\Controller\StackTesterController.cs" />
      <Compile Include="Assets\Scripts\MVC\View\StackTesterView.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\BlockDetailsView.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\BlockDetailsController.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
