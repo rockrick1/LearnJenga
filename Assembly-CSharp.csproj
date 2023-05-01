@@ -41,39 +41,39 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\MVC\View\CameraOrbitView.cs" />
-     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-     <Compile Include="Assets\Scripts\MVC\Model\GameModel.cs" />
-     <Compile Include="Assets\Scripts\MVC\Controller\GameController.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\GameView.cs" />
      <Compile Include="Assets\Scripts\MVC\Controller\CameraOrbitController.cs" />
-     <Compile Include="Assets\Scripts\MVC\Controller\Factory\GameControllerFactory.cs" />
-     <Compile Include="Assets\Scripts\MVC\Model\Factory\GameModelFactory.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\WorldObjectsView.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\GameUIView.cs" />
-     <Compile Include="Assets\Scripts\MVC\Controller\GameUIController.cs" />
-     <Compile Include="Assets\Scripts\MVC\Model\StackLoaderModel.cs" />
-     <Compile Include="Assets\Scripts\MVC\Model\BlockData.cs" />
-     <Compile Include="Assets\Scripts\MVC\Model\Mastery.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\StackView.cs" />
-     <Compile Include="Assets\Scripts\MVC\Controller\StackController.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\BlockView.cs" />
+     <Compile Include="Assets\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
+     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\MVC\Controller\WorldObjectsController.cs" />
      <Compile Include="Assets\Scripts\MVC\Controller\StackSelectorController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\BlockDetailsController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\WorldObjectsView.cs" />
      <Compile Include="Assets\Scripts\MVC\View\StackSelectorView.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\BlockData.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\StackController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\BlockView.cs" />
+     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\GameController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\Factory\GameModelFactory.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\StackLoaderModel.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\GameUIController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\StackTesterController.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\GameModel.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\CameraOrbitView.cs" />
+     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\Scripts\MVC\Controller\Factory\GameControllerFactory.cs" />
+     <Compile Include="Assets\Scripts\MVC\Model\Mastery.cs" />
      <Compile Include="Assets\Scripts\MVC\View\StackSelectButtonView.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\GameUIView.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\GameView.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\BlockDetailsView.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\StackTesterView.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
      <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
-     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
-     <Compile Include="Assets\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
-     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
-     <Compile Include="Assets\Scripts\MVC\Controller\StackTesterController.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\StackTesterView.cs" />
-     <Compile Include="Assets\Scripts\MVC\View\BlockDetailsView.cs" />
-     <Compile Include="Assets\Scripts\MVC\Controller\BlockDetailsController.cs" />
+     <Compile Include="Assets\Scripts\MVC\View\StackView.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -367,6 +367,9 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>D:\Programs\2021.3.21f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
+     <Reference Include="DOTween">
+     <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Assets\DOTween\DOTween.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
@@ -375,9 +378,6 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.0\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTween">
-     <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Assets\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>D:\Programs\2021.3.21f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -805,6 +805,9 @@
      <Reference Include="UnityEngine.UI">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
+     <Reference Include="Newtonsoft.Json.UnityConverters">
+     <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\Newtonsoft.Json.UnityConverters.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
@@ -813,9 +816,6 @@
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
      <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Newtonsoft.Json.UnityConverters">
-     <HintPath>D:\Henrique\Documentos\Unity\LearnJenga\Library\ScriptAssemblies\Newtonsoft.Json.UnityConverters.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

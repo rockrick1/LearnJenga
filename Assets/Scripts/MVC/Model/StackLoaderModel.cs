@@ -44,7 +44,6 @@ public class StackLoaderModel : IDisposable
         foreach (string grade in Stacks.Keys)
         {
             List<BlockData> stack = Stacks[grade];
-            //TODO check sorting here
             temp[grade] = stack.OrderBy(x => x.Domain)
                 .ThenBy(x => x.Cluster)
                 .ThenBy(x => x.Standardid)
